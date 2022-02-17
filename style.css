@@ -6,18 +6,7 @@ body {
     height: 100vh;
 }
 
-.header {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-family: "Monument Extended";
-    text-transform: uppercase;
-    font-size: 100px;
-    z-index: -1;
-}
-
-.container {
+.wrapperText {
     width: 100%;
     height: 100vh;
     margin: 0px auto;
@@ -25,19 +14,19 @@ body {
     justify-content: center;
     align-items: center;
     background: #161616;
-    animation: slide-out-container 4s cubic-bezier(0.97, 0.01, 0.36, 0.99) 2.8s;
+    animation: fadeOutContainer 4s cubic-bezier(0.97, 0.01, 0.36, 0.99) 2.5s;
     animation-fill-mode: forwards;
 }
 
 .text-wrapper {
     color: white;
     position: absolute;
+    height: 100%; 
 }
 
 .text {
-    font-family: "Monument Extended";
-    font-weight: lighter;
-    font-size: 54px;
+    font-family: "Roboto", sans-serif;;
+    font-size: 100px;
 }
 
 .text-1,
@@ -91,7 +80,7 @@ body {
 }
 
 .text-6 {
-    animation: blink 0.8s linear 0.4s, blink 0.8s linear 2.5s, slide-out 1s linear 3.2s;
+    animation: blink 0.8s linear 0.4s, blink 0.8s linear 2.5s, fadeOut 6s 4s linear;
     opacity: 0;
 }
 
@@ -120,67 +109,26 @@ body {
     opacity: 0;
 }
 
-@keyframes slide-out {
+@keyframes fadeOut {
+   
     0% {
-        opacity: 0%;
+        transform: scale(1);
     }
-    1% {
-        opacity: 100%;
-    }
-
-    19% {
-        opacity: 100%;
-    }
-    20% {
-        opacity: 0%;
-    }
-
-    39% {
-        opacity: 0%;
-    }
-    40% {
-        opacity: 100%;
-    }
-
-    59% {
-        opacity: 100%;
-    }
-    60% {
-        opacity: 0%;
-    }
-
-    79% {
-        opacity: 0%;
-    }
-    80% {
-        opacity: 100%;
-    }
-
     100% {
-        opacity: 100%;
+        transform: scale(5);
     }
 }
 
-@keyframes slide-out-container {
+@keyframes fadeOutContainer {
     0% {
         height: 100vh;
     }
 
-    40% {
+    70% {
         height: 100vh;
     }
 
     100% {
         height: 0%;
-    }
-}
-
-@media (max-width: 990px) {
-    .header {
-        font-size: 24px;
-    }
-
-    .text {
-        font-size: 24px;
     }
 }
